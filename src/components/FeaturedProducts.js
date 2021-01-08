@@ -7,7 +7,15 @@ import Loading from './Loading'
 import Product from './Product'
 
 const FeaturedProducts = () => {
-  return <h4>featured products</h4>
+  return <Wrapper className = 'section'>
+    <div className = 'title'>
+      <h2>featured products</h2>
+      <div className = 'underline'></div>
+    </div>
+    <div className = 'section-center featured'>
+      
+    </div>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`
