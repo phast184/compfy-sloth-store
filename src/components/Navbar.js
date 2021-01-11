@@ -32,10 +32,6 @@ const Nav = () => {
               </li>
             );
           })}
-
-          <li>
-            <a href= '/checkout'>checkout</a>
-          </li>
         </ul>
 
         <CartButtons />

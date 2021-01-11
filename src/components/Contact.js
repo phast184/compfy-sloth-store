@@ -12,9 +12,22 @@ const Contact = () => {
             sint unde quaerat ratione soluta veniam provident adipisci cumque
             eveniet tempore?
           </p>
-          <form className = 'contact-form'> 
-            <input type = 'email' className = 'form-input' placeholder = 'Enter Email' />
-            <button type = 'submit' className = 'submit-btn'>subscribe</button>
+
+          {/* use formspree to handle form submission withour server side code */}
+          <form
+            className="contact-form"
+            action="https://formspree.io/f/mvovdqae"
+            method="POST"
+          >
+            <input
+              type="email"
+              className="form-input"
+              placeholder="Enter Email"
+              name="_replyto"
+            />
+            <button type="submit" className="submit-btn">
+              subscribe
+            </button>
           </form>
         </div>
       </div>
