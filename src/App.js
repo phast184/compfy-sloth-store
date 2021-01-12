@@ -8,7 +8,8 @@ import {
   About,
   Products,
   SingleProduct,
-  Checkout
+  Checkout,
+  Private
 } from "./pages/index";
 
 function App() {
@@ -32,9 +33,9 @@ function App() {
             <Cart />
           </Route>
 
-          <Route exact path="/checkout">
+          <Private exact path="/checkout">
             <Checkout />
-          </Route>
+          </Private>
           <Route exact path="/products/:id" children={<SingleProduct />} />
 
           <Route exact path="/*">

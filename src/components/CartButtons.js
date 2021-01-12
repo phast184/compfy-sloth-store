@@ -20,7 +20,7 @@ const CartButtons = () => {
         </span>
       </Link>
 
-      {user ? (
+      {isAuthenticated ? (
         <button type="button" className="auth-btn" onClick={() => logout({returnTo: window.location.origin})}>
           Logout
           <FaUserMinus />
