@@ -9,11 +9,17 @@ const ProductList = () => {
     isGridview,
     isListview,
   } = useFilterContext();
+
+  if (products.length < 1) {
+    return (
+      <div className = 'loading'></div>
+    );
+  }
   return (
     <>
       {isGridview && <GridView products={products}></GridView>}
-      {isListview && <ListView products={products}></ListView>}   
- </>
+      {isListview && <ListView products={products}></ListView>}
+    </>
   );
 };
 

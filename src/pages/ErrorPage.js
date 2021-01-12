@@ -6,7 +6,7 @@ const ErrorPage = () => {
     <section>
       <h1>404</h1>
       <h3>Sorry, the page you tried cannot be found</h3>
-      <a className = 'btn' href = '/'>back home</a>
+      <Link className = 'btn' to = '/'>back home</Link>
     </section>
   </Wrapper>
 }

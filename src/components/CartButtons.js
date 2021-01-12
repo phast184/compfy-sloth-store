@@ -5,9 +5,11 @@ import styled from "styled-components";
 import { useProductsContext } from "../context/products_context";
 import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/user_context";
-
+import { useAuth0 } from "@auth0/auth0-react";
 const CartButtons = () => {
-  const {total_items} = useCartContext()
+  const { total_items } = useCartContext();
+  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+
   return (
     <Wrapper className="cart-btn-wrapper">
       <Link to="/cart" className="cart-btn">
@@ -18,10 +20,17 @@ const CartButtons = () => {
         </span>
       </Link>
 
-      <button type = 'button' className = 'auth-btn'>
-        Login
-        <FaUserPlus />
-      </button>
+      {user ? (
+        <button type="button" className="auth-btn" onClick={() => logout({returnTo: window.location.origin})}>
+          Logout
+          <FaUserMinus />
+        </button>
+      ) : (
+        <button type="button" className="auth-btn" onClick={loginWithRedirect}>
+          Login
+          <FaUserPlus />
+        </button>
+      )}
     </Wrapper>
   );
 };

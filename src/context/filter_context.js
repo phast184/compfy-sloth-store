@@ -86,6 +86,7 @@ export const FilterProvider = ({ children }) => {
   useEffect(() => {
     dispatch({type: FILTER_PRODUCTS, payload: {...state}})
     dispatch({ type: SORT_PRODUCTS })
+
   }, [products, state.sort, state.filters])
 
 
